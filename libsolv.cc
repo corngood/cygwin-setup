@@ -850,7 +850,7 @@ SolverSolution::tasksToJobs(SolverTasks &tasks, updateMode update, Queue &job)
           queue_push2(&job, SOLVER_INSTALL | SOLVER_SOLVABLE_PROVIDES, sv.name_id());
           break;
         case SolverTasks::taskUninstall:
-          queue_push2(&job, SOLVER_ERASE | SOLVER_SOLVABLE, sv.id);
+          queue_push2(&job, SOLVER_ERASE | SOLVER_WEAK | SOLVER_SOLVABLE, sv.id);
           break;
         case SolverTasks::taskReinstall:
           // we don't know how to ask solver for this, so we just add the erase
